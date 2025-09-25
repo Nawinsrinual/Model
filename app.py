@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 
 # =======================
-# CSS พื้นหลัง + ตัวอักษรชัด
+# CSS พื้นหลัง + ปุ่มอัปโหลดชัด
 # =======================
 page_bg = """
 <style>
@@ -14,7 +14,7 @@ page_bg = """
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #222222; /* ตัวอักษรเข้ม */
+    color: #222222;
 }
 
 [data-testid="stHeader"] {
@@ -27,10 +27,30 @@ page_bg = """
 
 .main-header {
     font-size: 32px;
-    color: #222222; /* ตัวอักษรเข้ม */
+    color: #222222;
     text-align: center;
 }
 
+/* ปรับปุ่ม Browse file และ Take photo */
+[data-testid="stFileUploader"] button,
+[data-testid="stCameraInput"] button {
+    background: linear-gradient(90deg, #f48c06, #f4b41a) !important;
+    color: white !important;
+    font-weight: bold !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    border: none !important;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2) !important;
+    transition: 0.3s;
+}
+
+[data-testid="stFileUploader"] button:hover,
+[data-testid="stCameraInput"] button:hover {
+    background: linear-gradient(90deg, #f4a261, #e76f51) !important;
+    transform: scale(1.05);
+}
+
+/* ตารางเมนู */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -45,7 +65,7 @@ table {
 th, td {
     padding: 12px 15px;
     text-align: left;
-    color: #222222; /* ตัวอักษรเข้ม */
+    color: #222222;
 }
 
 th {
@@ -92,7 +112,6 @@ menu_list = [
     'Tom Kha Kai (ต้มข่าไก่)', 'Tom Yum Kung (ต้มยำกุ้ง)'
 ]
 
-# สร้างตารางสองคอลัมน์
 menu_table = """
 <table>
 <tr><th>English Name</th><th>Thai Name</th></tr>
