@@ -122,7 +122,7 @@ st.markdown(menu_table, unsafe_allow_html=True)
 # =======================
 # โหลดโมเดลและกำหนดหมวดหมู่
 # =======================
-model = load_model('Image_classify2.keras')
+model = load_model('thai_food_model.keras')
 data_cat = [
     'khaoklukkapi', 'fishcake', 'greencurry', 'khailookkeaw', 'khaomokkai', 'khaomunkai',
     'kungobwunsen', 'kungpao', 'moosatay', 'padthai', 'padkrapao', 'padpakbung',
